@@ -1,0 +1,30 @@
+.footer-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social {
+    margin-left: 1rem;
+}
+
+.footer-social i {
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #918d8d;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    width: 100%;
+    
+}
+
+.footer-copy-right {
+    margin: 0.8rem;
+}

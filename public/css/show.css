@@ -1,0 +1,18 @@
+.card-img-top{
+    border-radius: 0.3rem;
+}
+
+.container{
+ width: 90%;
+}
+
+.nocard{
+    border: none;
+}
+
+.show-anchor-tag{
+    margin-right: 1rem;
+    width: 5rem;
+}
+
+#map { width: 100%;}

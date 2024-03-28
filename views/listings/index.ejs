@@ -1,0 +1,211 @@
+<% layout("/layout/boilerplate") -%>
+
+
+<head>  
+
+<link rel="stylesheet" href="/css/card.css">
+<style>  
+  .filters{
+    display: flex;
+   
+    align-items: center;
+  }
+  .filter a{
+    margin: 0.8rem;
+  margin-top: 3rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.6;
+  }
+
+  .filter a:hover{
+    opacity: 1;
+  }
+
+  .filter p {
+    font-size: 0.9rem;
+  }
+  .filter a img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .filter a{
+    text-decoration: none;
+    color: black;
+  }
+
+
+  .tex-info{
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    display: none;
+  }
+
+
+  .gst-taxes{
+display: inline;
+  }
+
+
+  .toggleTax{
+    border: 2px solid #8d7e7e;
+    padding: 0.7rem;
+    border-radius: 0.7rem;
+    margin-left: 2rem;
+  }
+</style>
+
+
+</head>
+
+
+
+
+<div class="filters">
+  <div class="filter">
+    <a href="/listings/category/islands">
+    <img src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="">
+    <p>Islands</p>
+  </a>
+  </div>
+
+<div class="filter">
+  <a href="/listings/category/castles">
+    <img src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg" alt="">
+    <p>Castles</p>
+  </a>
+</div>
+
+
+<div class="filter">
+  <a href="/listings/category/arctic">
+    <img src="https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg" alt="">
+    <p>Arctic</p>
+
+  </a>
+</div>
+
+
+<div class="filter">
+  <a href="/listings/category/top-of-the-world">
+    <img src="https://a0.muscache.com/pictures/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg" alt="">
+    <p>Top of the world</p>
+
+  </a>
+</div>
+
+
+<div class="filter">
+  <a href="/listings/category/mansions">
+    <img src="https://a0.muscache.com/pictures/78ba8486-6ba6-4a43-a56d-f556189193da.jpg" alt="">
+    <p>Mansions</p>
+
+  </a>
+</div>
+
+
+<div class="filter">
+  <a href="/listings/category/historical-homes">
+    <img src="https://a0.muscache.com/pictures/33dd714a-7b4a-4654-aaf0-f58ea887a688.jpg" alt="">
+    <p>Historical homes</p>
+
+  </a>
+</div>
+
+
+
+
+<div class="filter">
+  <a href="/listings/category/campus">
+    <img src="https://a0.muscache.com/pictures/31c1d523-cc46-45b3-957a-da76c30c85f9.jpg" alt="">
+    <p>Campus</p>
+
+  </a>
+</div>
+
+
+<div class="filter">
+  <a href="/listings/category/amazing-pools">
+    <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="">
+    <p>Amazing pools</p>
+
+  </a>
+</div>
+
+
+<div class="toggleTax">
+  <div class="form-check-reverse form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Display Total after Taxes</label>
+  </div>
+
+
+
+
+</div>
+
+</div>
+
+
+
+<div class="row row-cols-md-3 row-cols-sm-2 justify-content-center chat-box">
+  <% for (let listing of showListing) { %>
+    <a href="/listings/<%= listing._id %>" class="padding">
+      <div class="card" style="width: 20rem;">
+        <img src="<%= listing.imageUpload.url || listing.image %>" class="card-img-top" alt="..." style="height: 20rem;">
+
+        <div class="card-body">
+          <div class="card-img-overlay"></div>
+          <p class="card-text">
+            <span><%= listing.title %></span>
+            <br>
+            <p>
+              <% if (listing.price !== null && listing.price !== undefined) { %>
+                &#8377; <%= listing.price.toLocaleString("en-IN") %>/ night
+              <% } else { %>
+                Price information not available
+              <% } %>
+            <span>
+              
+              <i class="tex-info ">18% GST</i>
+            </span>  
+              
+            </p> 
+         
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>
+
+<script>
+
+
+
+let switchToggle = document.getElementById("flexSwitchCheckDefault");
+
+switchToggle.addEventListener("click" , ()=>{
+  
+
+
+  let tex_info = document.querySelector(".tex-info");
+
+  
+  tex_info.classList.toggle("gst-taxes");
+
+
+})
+
+
+
+
+
+</script>
+
+
+
