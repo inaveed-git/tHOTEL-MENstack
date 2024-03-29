@@ -47,7 +47,6 @@ Responsive design is crucial for ensuring that your web application is accessibl
 
 
 
-#tHOTEL #MENstack #responsivedesign #webdevelopment #codingtips
 
 ## Getting Started
 ### Prerequisites
