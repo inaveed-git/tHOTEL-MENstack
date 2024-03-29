@@ -1,9 +1,8 @@
 
-
 # tHOTEL - MEN Stack Project
 
 ## Overview
-tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users to manage hotel listings. It features error handling, authentication, authorization, storing data in MongoDB Atlas Cloud, and storing images in Cloudinary Cloud. Users are required to use their own API keys and secret keys for secure operation.
+tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users to manage hotel listings. It features error handling, authentication, authorization, storing data in MongoDB Atlas Cloud, storing images in Cloudinary Cloud, and a map feature for locating hotels. Users are required to use their own API keys and secret keys for secure operation.
 
 ## Technologies Used
 - MongoDB
@@ -21,6 +20,7 @@ tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users t
 - **Authorization:** Authorization mechanisms to control access to certain features based on user roles.
 - **MongoDB Atlas Cloud:** Utilizes MongoDB Atlas Cloud to store and manage data securely in the cloud.
 - **Cloudinary Integration:** Integrates Cloudinary for storing and managing images securely in the cloud.
+- **Map Feature:** Allows users to locate hotels on a map for easier navigation.
 
 ## Routes
 
@@ -39,6 +39,15 @@ tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users t
 ### Review Routes (`/listings/:id/review`)
 - **POST `/listings/:id/review`:** Add a new review for a listing. (Requires authentication)
 - **DELETE `/listings/:id/review/:reviewId`:** Delete a review. (Requires authentication and review ownership)
+
+## Responsive Design
+
+
+Responsive design is crucial for ensuring that your web application is accessible and user-friendly across various devices and screen sizes. In this video, we'll explore five key strategies for achieving responsiveness in the tHOTEL MEN stack project.
+
+
+
+#tHOTEL #MENstack #responsivedesign #webdevelopment #codingtips
 
 ## Getting Started
 ### Prerequisites
@@ -62,7 +71,7 @@ tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users t
    npm install
    ```
 
-### Configuration
+## Configuration
 1. Create a `.env` file in the root directory of the project.
 2. Add your MongoDB Atlas connection URL, Cloudinary credentials, and other sensitive information to the `.env` file:
    ```
@@ -73,9 +82,13 @@ tHOTEL is a MEN (MongoDB, Express.js, Node.js) stack project that allows users t
    DB_URL=your_mongodb_connection_url_here
 
    SESSION_SECRET=your_session_secret_here
+   MAP_BOX_TOKEN=your_mapbox_token_here
+
+
+
    ```
 
-### Running the Application
+## Running the Application
 1. Start the server:
    ```
    npm start
@@ -96,4 +109,3 @@ Contributions are welcome! Please feel free to submit pull requests.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-

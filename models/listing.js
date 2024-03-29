@@ -38,7 +38,18 @@ const listingSchema = new Schema({
         type: String,
         // enum: ['Islands', 'Castles', 'Arctic' , 'Top of the world' , 'Mansions' , 'Historical homes' , 'Campers' , 'Amazing pools'] // Define your categories
         enum: ['islands' , 'castles' , 'arctic' , 'top-of-the-world' , 'historical-homes' , 'campus' , 'amazing-pools']
-    }
+    } , 
+    geometry : {
+        type: {
+          type: String, // Don't do `{ location: { type: String } }`
+          enum: ['Point'], // 'location.type' must be 'Point'
+          required: true
+        },
+        coordinates: {
+          type: [Number],
+          required: true
+        }
+    },
 });
 
 listingSchema.post("findOneAndDelete", async(listing) => {
